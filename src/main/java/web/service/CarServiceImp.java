@@ -17,6 +17,8 @@ public class CarServiceImp implements CarService {
 
     @Override
     public List<Car> showCars(int count) {
+        if (count >= 5)
+            count = Integer.MAX_VALUE;
         return carDao.showCars(count);
     }
 }
